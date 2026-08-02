@@ -1,17 +1,23 @@
 # 3D SCARA Pick & Place Simulator (MATLAB)
 
-An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place Simulator built natively in MATLAB.
+An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place Simulator developed in MATLAB.
 
 ![MATLAB Version](https://img.shields.io/badge/MATLAB-R2019b%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
+## Objective
+
+This project demonstrates analytical forward and inverse kinematics of a 3D SCARA robot through an interactive MATLAB-based simulation environment.
+
+---
+
 ## 📌 Features
 
-- **Base-Lift 3D Kinematics**: Implements a 3D SCARA configuration where the $Z$-axis translation occurs at the base column (Joint 1 lift), maintaining planar rotation for arms $L_1$ and $L_2$.
-- **Inverse Kinematics (IK)**: Resolves joint configurations ($\theta_1, \theta_2, Z$) for target end-effector coordinates $(X, Y, Z)$ using geometric decoupling with elbow-up priority.
-- **Interactive UI**: Custom dark-themed App Designer interface built with `uifigure` and `uiaxes`. Includes initial/final target position sliders, numeric edit fields, and animation triggers.
-- **Dynamic Orientaion Indicator in 3D**: Top-right locked orientation triad axes that continuously sync with the main camera rotation in real time without being affected by pan or zoom.
-- **3D Visualization**: Rounded 3D block arms, cylindrical base pedestal, cyan/orange/white joint caps, translucent ghost arm visualization for final targets, and a 3D workspace cage mesh.
+- **Base-Lift 3D Kinematics**: Implements a 3D SCARA configuration where the $Z$-axis translation occurs at the base column (i.e a prismatic Joint), maintaining planar rotation for arms $L_1$ and $L_2$ (revolute joints).
+- **Inverse Kinematics (IK)**: Resolves joint configurations ($\theta_1, \theta_2, Z$) for target end-effector coordinates $(X, Y, Z)$ using an analytical geometric solution with elbow-up priority.
+- **Interactive UI**: Custom dark-themed App Designer interface built with `uifigure` and `uiaxes`. Includes intial& final position sliders, numeric input fields, and animation controls for interactive target manipulation.
+- **Dynamic Orientaion Indicator in 3D**: Top-right locked orientation triad axes that remains synchronized with the main camera orientation while remaining independent of pan and zoom.
+- **3D Visualization**: 3D visualization featuring rounded arm links, cylindrical base, joint markers, translucent ghost-arm preview, and workspace cage mesh.
 
 ---
 
@@ -19,7 +25,7 @@ An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place
 
 | Link $i$ | $\alpha_{i-1}$ | $a_{i-1}$ | $d_i$ | $\theta_i$ |
 | :---: | :---: | :---: | :---: | :---: |
-| **1** | $0^\circ$ | $0$ | $d_1 = Z$ | $\theta_1^*$ (Prismatic + Revolute Base) |
+| **1** | $0^\circ$ | $0$ | $d_1 = Z$ | $\theta_1^*$ (Base prismatic lift and revolute joint) |
 | **2** | $0^\circ$ | $L_1 = 300\text{ mm}$ | $0$ | $\theta_2^*$ (Revolute Elbow) |
 | **3** | $0^\circ$ | $L_2 = 200\text{ mm}$ | $0$ | $0^\circ$ (End Effector) |
 
@@ -62,22 +68,29 @@ scara_kinematics
 ```
 Simulation3D_SCARA/
 ├── 3DSim/
-│   ├── Scara3dApp.m           # Main 3D App UI & 3D OpenGL Rendering Engine
-│   ├── scara3d_kinematics.m    # 3D Entry script and CLI argument parser
+│   ├── Scara3dApp.m           # Main GUI & 3D-visualization
+│   ├── scara3d_kinematics.m   # Entry point and argument parser
 │   ├── ik3d_solve.m           # 3D Inverse Kinematics solver
 │   ├── fk3d_solve.m           # 3D Forward Kinematics solver
-│   ├── best_solution_3d.m     # Solution selection (Elbow-Up priority)
-│   └── is_reachable_3d.m      # 3D Annular Workspace reachability validator
+│   ├── best_solution_3d.m     # Preferred IK solution selection (Elbow-Up priority)
+│   └── is_reachable_3d.m      # Workspace reachability check
 ├── matlab/
 │   ├── ScaraPickPlaceApp.m    # 2D App UI
 │   ├── scara_kinematics.m     # 2D Entry script
 │   ├── ik_solve.m             # 2D Inverse Kinematics solver
 │   ├── fk_solve_pos.m         # 2D Forward Kinematics solver
-│   ├── plot_workspace.m       # 2D Workspace reachability heatmap generator
-│   └── demo_grid.m            # 7-target IK test grid demonstrator
+│   ├── plot_workspace.m       # Workspace visualization
+│   └── demo_grid.m            # IK demonstration script
 └── .gitignore                 # MATLAB & OS Git ignore configuration
 ```
 
+## Limitations
+
+- Assumes rigid links and ideal joints.
+- Collision detection is not included.
+- Dynamics and actuator modelling are outside the scope of this simulator.
+
+```
 ---
 
 ## 👤 Author
