@@ -5,13 +5,13 @@ An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place
 ![MATLAB Version](https://img.shields.io/badge/MATLAB-R2019b%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## 🎯 Project Objective
+## Project Objective
 
 This project demonstrates analytical forward and inverse kinematics in 3D of a SCARA robot through an interactive MATLAB-based simulation environment.
 
 ---
 
-## 📌 Features
+## Features
 
 - **Base-Lift 3D Kinematics**: Implements a 3D SCARA configuration where the $Z$-axis translation occurs at the base column (i.e a prismatic Joint), maintaining planar rotation for arms $L_1$ and $L_2$ (revolute joints).
 - **Inverse Kinematics (IK)**: Resolves joint configurations ($\theta_1, \theta_2, Z$) for target end-effector coordinates $(X, Y, Z)$ using an analytical geometric solution with elbow-up priority.
@@ -21,7 +21,7 @@ This project demonstrates analytical forward and inverse kinematics in 3D of a S
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 - MATLAB R2019b or newer
 - MATLAB App Designer
@@ -29,7 +29,7 @@ This project demonstrates analytical forward and inverse kinematics in 3D of a S
 
 ---
 
-## 📐 DH Parameters & Kinematics Model
+## DH Parameters & Kinematics Model
 
 | Link $i$ | $\alpha_{i-1}$ | $a_{i-1}$ | $d_i$ | $\theta_i$ |
 | :---: | :---: | :---: | :---: | :---: |
@@ -44,7 +44,7 @@ This project demonstrates analytical forward and inverse kinematics in 3D of a S
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Launch 3D Simulator
 Navigate to the `3DSim/` directory in MATLAB and run the entry-point script:
@@ -71,7 +71,7 @@ scara_kinematics
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Simulation3D_SCARA/
@@ -92,7 +92,7 @@ Simulation3D_SCARA/
 └── .gitignore                 # MATLAB & OS Git ignore configuration
 ```
 
-## ⚠️ Limitations
+## Limitations
 
 - Standard industrial SCARA robots typically include a fourth degree of freedom for end-effector (wrist) rotation about the vertical axis. This simulator omits that joint and models only the three degrees of freedom required for end-effector positioning: two revolute joints ($\theta_1$, $\theta_2$) and one prismatic Z-axis joint.
 - Consequently, the simulator computes only the position of the end effector $(X, Y, Z)$ and does not model end-effector orientation.
@@ -102,7 +102,7 @@ Simulation3D_SCARA/
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 - Collision avoidance
 - ROS integration
@@ -111,7 +111,7 @@ Simulation3D_SCARA/
 
 ---
 
-## 📄 License
+## License
 
 This project is released under the MIT License.
 
