@@ -7,7 +7,7 @@ An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place
 
 ## Objective
 
-This project demonstrates analytical forward and inverse kinematics of a 3D SCARA robot through an interactive MATLAB-based simulation environment.
+This project demonstrates analytical forward and inverse kinematics in 3D of a SCARA robot through an interactive MATLAB-based simulation environment.
 
 ---
 
@@ -86,11 +86,23 @@ Simulation3D_SCARA/
 
 ## Limitations
 
+- Standard industrial SCARA robots typically include a fourth degree of freedom for end-effector (wrist) rotation about the vertical axis. This simulator omits that joint and models only the three degrees of freedom required for end-effector positioning: two revolute joints ($\theta_1$, $\theta_2$) and one prismatic Z-axis joint.
+- Consequently, the simulator computes only the position of the end effector $(X, Y, Z)$ and does not model end-effector orientation.
 - Assumes rigid links and ideal joints.
 - Collision detection is not included.
 - Dynamics and actuator modelling are outside the scope of this simulator.
 
 ```
+
+## Future Work
+
+- Path planning
+- Collision avoidance
+- ROS integration
+- Camera-based object detection
+- Pick-and-place automation
+```
+
 ---
 
 ## 👤 Author
