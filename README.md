@@ -5,7 +5,7 @@ An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place
 ![MATLAB Version](https://img.shields.io/badge/MATLAB-R2019b%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-## Objective
+## 🎯 Project Objective
 
 This project demonstrates analytical forward and inverse kinematics in 3D of a SCARA robot through an interactive MATLAB-based simulation environment.
 
