@@ -1,6 +1,6 @@
 # 3D SCARA Pick & Place Simulator (MATLAB)
 
-An interactive, high-fidelity 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place Simulator built natively in MATLAB.
+An interactive 3D SCARA (Selective Compliance Assembly Robot Arm) Pick-and-Place Simulator built natively in MATLAB.
 
 ![MATLAB Version](https://img.shields.io/badge/MATLAB-R2019b%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
@@ -8,11 +8,10 @@ An interactive, high-fidelity 3D SCARA (Selective Compliance Assembly Robot Arm)
 ## 📌 Features
 
 - **Base-Lift 3D Kinematics**: Implements a 3D SCARA configuration where the $Z$-axis translation occurs at the base column (Joint 1 lift), maintaining planar rotation for arms $L_1$ and $L_2$.
-- **Analytical Inverse Kinematics (IK)**: Resolves joint configurations ($\theta_1, \theta_2, Z$) for target end-effector coordinates $(X, Y, Z)$ using geometric decoupling with elbow-up priority.
+- **Inverse Kinematics (IK)**: Resolves joint configurations ($\theta_1, \theta_2, Z$) for target end-effector coordinates $(X, Y, Z)$ using geometric decoupling with elbow-up priority.
 - **Interactive UI**: Custom dark-themed App Designer interface built with `uifigure` and `uiaxes`. Includes initial/final target position sliders, numeric edit fields, and animation triggers.
-- **Dynamic 3D Camera Gizmo**: Top-right locked orientation triad axes that continuously sync with the main camera rotation in real time without being affected by pan or zoom.
-- **High-Fidelity Visuals**: Rounded 3D block arms, cylindrical base pedestal, cyan/orange/white joint caps, translucent ghost arm visualization for final targets, and a 3D workspace cage mesh.
-- **Resizable Window**: Fully responsive GUI layout with dynamic reflow upon window resize or maximization.
+- **Dynamic Orientaion Indicator in 3D**: Top-right locked orientation triad axes that continuously sync with the main camera rotation in real time without being affected by pan or zoom.
+- **3D Visualization**: Rounded 3D block arms, cylindrical base pedestal, cyan/orange/white joint caps, translucent ghost arm visualization for final targets, and a 3D workspace cage mesh.
 
 ---
 
