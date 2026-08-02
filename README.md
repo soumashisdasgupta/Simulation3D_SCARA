@@ -92,7 +92,7 @@ Simulation3D_SCARA/
 - Collision detection is not included.
 - Dynamics and actuator modelling are outside the scope of this simulator.
 
-```
+
 
 ## Future Work
 
