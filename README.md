@@ -21,6 +21,14 @@ This project demonstrates analytical forward and inverse kinematics in 3D of a S
 
 ---
 
+## ⚙️ Requirements
+
+- MATLAB R2019b or newer
+- MATLAB App Designer
+- OpenGL-compatible graphics hardware (recommended for smooth 3D rendering)
+
+---
+
 ## 📐 DH Parameters & Kinematics Model
 
 | Link $i$ | $\alpha_{i-1}$ | $a_{i-1}$ | $d_i$ | $\theta_i$ |
@@ -84,7 +92,7 @@ Simulation3D_SCARA/
 └── .gitignore                 # MATLAB & OS Git ignore configuration
 ```
 
-## Limitations
+## ⚠️ Limitations
 
 - Standard industrial SCARA robots typically include a fourth degree of freedom for end-effector (wrist) rotation about the vertical axis. This simulator omits that joint and models only the three degrees of freedom required for end-effector positioning: two revolute joints ($\theta_1$, $\theta_2$) and one prismatic Z-axis joint.
 - Consequently, the simulator computes only the position of the end effector $(X, Y, Z)$ and does not model end-effector orientation.
@@ -92,16 +100,20 @@ Simulation3D_SCARA/
 - Collision detection is not included.
 - Dynamics and actuator modelling are outside the scope of this simulator.
 
+---
 
+## 🔮 Future Work
 
-## Future Work
-
-- Path planning
 - Collision avoidance
 - ROS integration
 - Camera-based object detection
 - Pick-and-place automation
 
+---
+
+## 📄 License
+
+This project is released under the MIT License.
 
 ---
 
