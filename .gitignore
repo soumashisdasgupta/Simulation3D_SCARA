@@ -1,96 +1,51 @@
-# ──────────────────────────────────────────────────────────────────────────────
-# SCARA Pick-and-Place Robot — .gitignore
-# ──────────────────────────────────────────────────────────────────────────────
+# ==============================================================================
+# Git Ignore Rules for SCARA Simulator Project (MATLAB & Python)
+# ==============================================================================
 
-# ── Python ────────────────────────────────────────────────────────────────────
+# MATLAB temporary and auto-save files
+*.asv
+*.m~
+*.bak
+*.mat.bak
+*.fig.bak
+*.p
+*.mex*
+slprj/
+*.slxc
+
+# Python byte-compiled / environment files
 __pycache__/
 *.py[cod]
 *$py.class
-*.pyo
-*.pyd
-
-# ── Virtual environments ──────────────────────────────────────────────────────
-.venv/
-venv/
+*.so
+.Python
 env/
+venv/
 ENV/
-.env
-
-# ── Distribution / packaging ──────────────────────────────────────────────────
-dist/
-build/
-*.egg-info/
-*.egg
-.eggs/
-MANIFEST
-
-# ── Testing & coverage ────────────────────────────────────────────────────────
+env.bak/
+venv.bak/
 .pytest_cache/
 .coverage
 htmlcov/
-coverage.xml
-*.coveragerc
-.tox/
+*.egg-info/
+dist/
+build/
 
-# ── Type checkers ─────────────────────────────────────────────────────────────
-.mypy_cache/
-.pytype/
-.pyre/
-
-# ── Jupyter Notebooks ─────────────────────────────────────────────────────────
-.ipynb_checkpoints/
-*.ipynb
-
-# ── Matplotlib output / saved figures ─────────────────────────────────────────
-*.png
-*.jpg
-*.jpeg
-*.svg
-*.pdf
-*.eps
-plots/
-figures/
-output/
-
-# ── IDE & editor files ────────────────────────────────────────────────────────
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-*.swp
-*.swo
-*~
-
-# ── OS generated ──────────────────────────────────────────────────────────────
+# Operating System & Editor Files
 .DS_Store
 Thumbs.db
-desktop.ini
+Desktop.ini
+ehthumbs.db
+*.stackdump
 
-# ── Hardware / MCU build artefacts (Phase 2+) ─────────────────────────────────
-*.hex
-*.bin
-*.elf
-*.map
-*.lst
-*.o
-*.a
-firmware/build/
+# IDE & Editor configurations
+.vscode/
+.idea/
+*.swp
+*~
 
-# ── Logs & data dumps ─────────────────────────────────────────────────────────
+# Log files and temporary outputs
 *.log
-*.csv
-*.dat
-logs/
-data/raw/
-
-# ── Secrets & local config overrides ─────────────────────────────────────────
-.env.local
-secrets.yaml
-local_config.yaml
-
-# ── Keep these tracked (override any broad rules above) ───────────────────────
-!config/robot_params.yaml
-!config/pid_params.yaml
-!config/vision_params.yaml
-!requirements.txt
-!README.md
+*.tmp
+temp/
+scratch/
