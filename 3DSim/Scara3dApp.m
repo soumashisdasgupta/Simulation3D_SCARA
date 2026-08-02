@@ -180,7 +180,7 @@ methods (Access = private)
             plot3(ax, [-lim, lim], [y, y], [0, 0], 'Color', grid_col, 'LineWidth', 1);
         end
         
-        % --- Adding a Faint Workspace Boundary Mesh (No importance; just makes the Simulator look cool!)---------------------
+        % --- Adding a Faint Workspace Boundary Mesh ---------------------
         [bX_out, bY_out, bZ_out] = cylinder(app.arm.outer_radius, 32);
         mesh(ax, bX_out, bY_out, bZ_out*app.arm.z_max, ...
             'FaceColor', 'none', 'EdgeColor', [0.30, 0.40, 0.50], 'EdgeAlpha', 0.15, 'LineWidth', 0.6);
