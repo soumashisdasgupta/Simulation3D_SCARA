@@ -31,11 +31,19 @@ This project demonstrates analytical forward and inverse kinematics in 3D of a S
 
 ## DH Parameters & Kinematics Model
 
-| Link $i$ | $\alpha_{i-1}$ | $a_{i-1}$ | $d_i$ | $\theta_i$ |
-| :---: | :---: | :---: | :---: | :---: |
-| **1** | $0^\circ$ | $0$ | $d_1 = Z$ | $\theta_1^*$ (Base prismatic lift and revolute joint) |
-| **2** | $0^\circ$ | $L_1 = 300\text{ mm}$ | $0$ | $\theta_2^*$ (Revolute Elbow) |
-| **3** | $0^\circ$ | $L_2 = 200\text{ mm}$ | $0$ | $0^\circ$ (End Effector) |
+| Link $i$ | Joint Type | $\alpha_{i-1}$ | $a_{i-1}$ | $d_i$ | $\theta_i$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **1** | Prismatic | $0^\circ$ | $0$ | $d_1 = Z^*$ | $0^\circ$ |
+| **2** | Revolute | $0^\circ$ | $0$ | $0$ | $\theta_1^*$ |
+| **3** | Revolute | $0^\circ$ | $L_1 = 300\text{ mm}$ | $0$ | $\theta_2^*$ |
+| **4** | Fixed | $0^\circ$ | $L_2 = 200\text{ mm}$ | $0$ | $0^\circ$ |
+
+\* Variable joint value (solved by IK / set by the user).
+
+- **Link 1** — base column translates vertically along $Z$; no rotation.
+- **Link 2** — first revolute joint, rotates arm $L_1$ about $Z$ by $\theta_1$.
+- **Link 3** — elbow revolute joint, rotates arm $L_2$ about $Z$ by $\theta_2$ (relative to link 2's frame).
+- **Link 4** — fixed offset to the end effector along $L_2$; not an actuated joint, included only to place the tool point.
 
 ### Workspace Limits
 - **Outer Radius ($R_{\text{max}}$)**: $L_1 + L_2 = 500\text{ mm}$
@@ -97,14 +105,13 @@ Simulation3D_SCARA/
 - Standard industrial SCARA robots typically include a fourth degree of freedom for end-effector (wrist) rotation about the vertical axis. This simulator omits that joint and models only the three degrees of freedom required for end-effector positioning: two revolute joints ($\theta_1$, $\theta_2$) and one prismatic Z-axis joint.
 - Consequently, the simulator computes only the position of the end effector $(X, Y, Z)$ and does not model end-effector orientation.
 - Assumes rigid links and ideal joints.
-- Collision detection is not included.
 - Dynamics and actuator modelling are outside the scope of this simulator.
 
 ---
 
 ## Future Work
 
-- Collision avoidance
+- Add the fourth (wrist) DOF and model end-effector orientation, not just position.
 - ROS integration
 - Camera-based object detection
 - Pick-and-place automation
