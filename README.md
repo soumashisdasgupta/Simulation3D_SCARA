@@ -101,7 +101,7 @@ Simulation3D_SCARA/
 - ROS integration
 - Camera-based object detection
 - Pick-and-place automation
-```
+
 
 ---
 
